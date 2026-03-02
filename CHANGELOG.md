@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.2 — 2026-03-02
+
+- Fixed minimize causing pill to disappear — getBoundingClientRect was called after display:none
+- Rect is now captured before hiding the element, then applied after showing the other
+- Removed unused syncMinimize/syncMaximize/positionAbsolute functions
+
 ## v3.1 — 2026-03-02
 
 - Fixed minimize position: pill now appears on the same side as the panel (right stays right, left stays left)

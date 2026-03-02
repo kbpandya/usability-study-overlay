@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.1).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.2).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v3.1
+ * Appian Usability Study Overlay v3.2
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -321,13 +321,6 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     // --- Position syncing between overlay ↔ pill ---
     var hasDragged = false;
 
-    function positionAbsolute(el, rect) {
-      el.style.top = rect.top + 'px';
-      el.style.left = rect.left + 'px';
-      el.style.right = 'auto';
-      el.style.transform = 'none';
-    }
-
     function resetPosition(el) {
       el.style.top = '50%';
       el.style.transform = 'translateY(-50%)';
@@ -336,13 +329,13 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
       el.style[position] = '16px';
     }
 
-    function syncMinimize() {
+    document.getElementById('study-minimize').addEventListener('click', function () {
+      var oRect = overlay.getBoundingClientRect();
+      overlay.style.display = 'none';
+      minBtn.style.display = 'block';
       if (!hasDragged) {
-        // Still in default position — just use CSS positioning
         resetPosition(minBtn);
       } else {
-        // User has dragged — align pill to same edge as overlay
-        var oRect = overlay.getBoundingClientRect();
         if (position === 'right') {
           minBtn.style.top = oRect.top + 'px';
           minBtn.style.right = (window.innerWidth - oRect.right) + 'px';
@@ -354,38 +347,28 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
         }
         minBtn.style.transform = 'none';
       }
-    }
-
-    function syncMaximize() {
-      if (!hasDragged) {
-        resetPosition(overlay);
-      } else {
-        var pRect = minBtn.getBoundingClientRect();
-        if (position === 'right') {
-          overlay.style.top = pRect.top + 'px';
-          overlay.style.right = (window.innerWidth - pRect.right) + 'px';
-          overlay.style.left = 'auto';
-        } else {
-          overlay.style.top = pRect.top + 'px';
-          overlay.style.left = pRect.left + 'px';
-          overlay.style.right = 'auto';
-        }
-        overlay.style.transform = 'none';
-      }
-    }
-
-    document.getElementById('study-minimize').addEventListener('click', function () {
-      overlay.style.display = 'none';
-      minBtn.style.display = 'block';
-      syncMinimize();
       isMinimized = true;
     });
 
     if (!draggable) {
       document.getElementById('study-maximize').addEventListener('click', function () {
+        var pRect = minBtn.getBoundingClientRect();
         minBtn.style.display = 'none';
         overlay.style.display = 'block';
-        syncMaximize();
+        if (!hasDragged) {
+          resetPosition(overlay);
+        } else {
+          if (position === 'right') {
+            overlay.style.top = pRect.top + 'px';
+            overlay.style.right = (window.innerWidth - pRect.right) + 'px';
+            overlay.style.left = 'auto';
+          } else {
+            overlay.style.top = pRect.top + 'px';
+            overlay.style.left = pRect.left + 'px';
+            overlay.style.right = 'auto';
+          }
+          overlay.style.transform = 'none';
+        }
         isMinimized = false;
       });
     }
@@ -466,9 +449,23 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
           maxBtn.style.cursor = 'grab';
           if (!pillMoved) {
             // Was a click, not a drag — expand the panel
+            var pRect = minBtn.getBoundingClientRect();
             minBtn.style.display = 'none';
             overlay.style.display = 'block';
-            syncMaximize();
+            if (!hasDragged) {
+              resetPosition(overlay);
+            } else {
+              if (position === 'right') {
+                overlay.style.top = pRect.top + 'px';
+                overlay.style.right = (window.innerWidth - pRect.right) + 'px';
+                overlay.style.left = 'auto';
+              } else {
+                overlay.style.top = pRect.top + 'px';
+                overlay.style.left = pRect.left + 'px';
+                overlay.style.right = 'auto';
+              }
+              overlay.style.transform = 'none';
+            }
             isMinimized = false;
           }
         }
