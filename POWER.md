@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v4.4).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v4.5).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v4.4
+ * Appian Usability Study Overlay v4.5
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -499,6 +499,9 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
   function onDone() {
     var tasks = activeCfg.tasks;
+    var label = 'Task ' + (currentTask + 1) + ' of ' + tasks.length;
+    document.getElementById('study-task-num').textContent = label;
+    document.getElementById('study-min-label').textContent = label;
 
     if (currentTask < tasks.length - 1) {
       document.getElementById('study-task-text').innerHTML = 'Great! When the facilitator prompts you, select Next Task.';

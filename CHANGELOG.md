@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.5 — 2026-03-02
+
+- Task counter now updates correctly on intermediary screens when navigating Back (shows the task you completed, not the one you came from)
+
 ## v4.4 — 2026-03-02
 
 - Back on a task screen now goes to the previous intermediary ("waiting for facilitator") screen, not the previous task's instructions
