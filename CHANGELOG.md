@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1 — 2026-03-02
+
+- Fixed minimize position: pill now appears on the same side as the panel (right stays right, left stays left)
+- Before any drag, minimize/maximize uses default CSS positioning (no jump to top-left)
+- After dragging, position syncs based on the correct edge (right edge for right-positioned panels)
+
 ## v3.0 — 2026-03-02 (First public release)
 
 - Header color: medium blue (`#115EBB`) with white text
