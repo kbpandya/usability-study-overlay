@@ -4,6 +4,8 @@ A drop-in floating task panel for running moderated usability studies on any web
 
 ## What It Does
 
+![Overlay example](Overlay%20example.png)
+
 - Injects a floating task panel on any prototype page
 - Task progression with Done / Next Task flow
 - Draggable and minimizable — both the panel and the minimized pill
