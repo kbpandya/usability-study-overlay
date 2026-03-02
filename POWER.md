@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.3).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.4).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v3.3
+ * Appian Usability Study Overlay v3.4
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -285,12 +285,12 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     overlay.style[position] = '16px';
 
     overlay.innerHTML =
-      '<div id="study-header" style="background:#115EBB;color:#fff;padding:12px 16px;' + (draggable ? 'cursor:grab;' : '') + '">' +
+      '<div id="study-header" style="background:#1D6FD3;color:#fff;padding:12px 16px;' + (draggable ? 'cursor:grab;' : '') + '">' +
         '<div style="display:flex;justify-content:space-between;align-items:flex-start;">' +
           '<span style="font-weight:600;font-size:15px;line-height:1.3;">' + title + '</span>' +
           '<button id="study-minimize" aria-label="Minimize" style="background:rgba(255,255,255,0.15);border:none;color:#fff;cursor:pointer;padding:4px 6px;border-radius:4px;font-size:12px;flex-shrink:0;margin-left:12px;line-height:1;">' + ICON_MINIMIZE + '</button>' +
         '</div>' +
-        '<span id="study-task-num" style="font-size:12px;opacity:0.80;margin-top:4px;display:block;"></span>' +
+        '<span id="study-task-num" style="font-size:12px;opacity:0.95;margin-top:4px;display:block;"></span>' +
       '</div>' +
       '<div id="study-body" style="padding:20px;">' +
         '<p id="study-task-text" style="font-size:14px;color:#374151;margin:0 0 20px 0;line-height:1.6;"></p>' +
@@ -308,7 +308,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     });
     minBtn.style[position] = '16px';
     minBtn.innerHTML =
-      '<button id="study-maximize" aria-label="Show study panel" style="background:#115EBB;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);font-family:system-ui,sans-serif;font-size:13px;">' +
+      '<button id="study-maximize" aria-label="Show study panel" style="background:#1D6FD3;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);font-family:system-ui,sans-serif;font-size:13px;">' +
         ICON_TASKS +
         '<span id="study-min-label"></span>' +
       '</button>';

@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.4 — 2026-03-02
+
+- Header color changed from `#115EBB` to `#1D6FD3` — brighter, more vibrant blue for better white text pop
+- Task counter opacity bumped from 0.80 to 0.95 to maintain WCAG AA on lighter background
+
 ## v3.3 — 2026-03-02
 
 - Body text size changed from 13px to 14px (0.875rem) — readable but subordinate to 15px header title
