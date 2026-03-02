@@ -109,3 +109,7 @@ Kiro sets these up for you, but here's what's available if you want to tweak the
 | Static HTML | Config on the specific HTML file |
 
 Kiro auto-detects your framework and sets things up accordingly.
+
+## Not Using Kiro IDE?
+
+You can still use the overlay manually. Download or clone this repo and point any AI coding tool (like Kiro CLI) at `POWER.md`, which contains the full script and integration instructions. It'll be a more hands-on process, but everything you need is in that file.
