@@ -31,7 +31,7 @@ https://github.com/kbpandya/usability-study-overlay
 
 Open a chat in any project and say something like:
 
-> Using the usability study overlay power, add an overlay to my /compare-deploy page with these tasks:
+> Add a usability study overlay to my /compare-deploy page with these tasks:
 > 1. Find the UTIL Rules app and start a deployment
 > 2. Review the deployment contents
 
@@ -63,21 +63,21 @@ Kiro will detect the version difference and replace the script file in your proj
 
 ## Example Prompts
 
-Copy-paste these into Kiro chat:
+Copy-paste these into Kiro chat. No need to name the power — Kiro picks it up from keywords like "usability study" and "overlay."
 
 **First time setup + add a study:**
-> Using the usability study overlay power, add a study overlay to my /application-status page with these tasks:
+> Add a usability study overlay to my /application-status page with these tasks:
 > 1. Find the pending application and open it
 > 2. Review the application details and approve it
 
 **Add to an existing project:**
-> Using the usability study overlay power, add a study to my /compare-deploy page with these 3 tasks:
+> Set up a study overlay on my /compare-deploy page with these 3 tasks:
 > 1. Select UTIL Rules and Core Interfaces for deployment
 > 2. Review the deployment contents for each app
 > 3. Check the database scripts tab
 
 **Multiple pages at once:**
-> Using the usability study overlay power, set up studies for two pages:
+> Add study overlays to two pages:
 > - /compare-deploy: "Deploy Flow Study" with tasks: [task 1], [task 2]
 > - /view-packages: "Package Review Study" with tasks: [task 1], [task 2]
 
