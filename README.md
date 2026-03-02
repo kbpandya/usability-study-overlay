@@ -23,6 +23,8 @@ In Kiro, open the Powers panel and click "Add Custom Power" → "Import from Git
 https://github.com/kbpandya/usability-study-overlay
 ```
 
+![Kiro Powers panel](Kiro%20Power%20Panel%20for%20setup.png)
+
 ### 2. Use It
 
 Open a chat in any project and say something like:
@@ -44,6 +46,18 @@ Append `?study=true` to the page URL:
 |---------------|------------|
 | Path routing | `http://localhost:5173/page-name?study=true` |
 | Hash routing | `http://localhost:5173/?study=true#/page-name` |
+
+## Updating the Power
+
+When a new version is released, you'll need to reinstall the power to get the latest changes:
+
+1. In the Powers panel, remove the existing "Usability Study Overlay" power
+2. Re-add it using "Add Custom Power" → "Import from GitHub URL" with the same URL
+3. Open a chat and say:
+
+> The usability study overlay power has been updated, can you update my overlay?
+
+Kiro will detect the version difference and replace the script file in your project. Your study configs stay untouched.
 
 ## Example Prompts
 
