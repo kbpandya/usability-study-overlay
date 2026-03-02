@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.6 — 2026-03-02
+
+- Header color reverted to `#115EBB` — best balance of vibrancy, contrast, and visual hierarchy
+
 ## v3.5 — 2026-03-02
 
 - Header color changed to deep navy `#0C4283` — white text pops strongly (9.9:1 contrast)
