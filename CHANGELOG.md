@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1 — 2026-03-02
+
+- Fixed back button going to negative task indices on task 1's intermediate state
+- Back button now shows "Back" label with arrow icon
+- Back button hidden in intermediate state when on task 1 (nothing to go back to)
+
 ## v4.0 — 2026-03-02
 
 - Added back button (left arrow) to navigate to previous tasks
