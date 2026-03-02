@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3 — 2026-03-02
+
+- Back button on "Next Task" intermediary screen now returns to the current task's instructions (not the previous task)
+
 ## v4.2 — 2026-03-02
 
 - Back button: removed arrow icon, text-only "Back"
