@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.4 — 2026-03-02
+
+- Back on a task screen now goes to the previous intermediary ("waiting for facilitator") screen, not the previous task's instructions
+- Navigation mirrors exact screen history: task → intermediary → task → intermediary
+
 ## v4.3 — 2026-03-02
 
 - Back button on "Next Task" intermediary screen now returns to the current task's instructions (not the previous task)
