@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.3 — 2026-03-02
+
+- Body text size increased from 13px to 16px (1rem) for better readability
+
 ## v3.2 — 2026-03-02
 
 - Fixed minimize causing pill to disappear — getBoundingClientRect was called after display:none
