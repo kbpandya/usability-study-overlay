@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.5 — 2026-03-02
+
+- Header color changed to deep navy `#0C4283` — white text pops strongly (9.9:1 contrast)
+- Task counter opacity restored to 0.80 (6.9:1 contrast on darker background)
+
 ## v3.4 — 2026-03-02
 
 - Header color changed from `#115EBB` to `#1D6FD3` — brighter, more vibrant blue for better white text pop

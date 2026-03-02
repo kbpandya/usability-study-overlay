@@ -62,7 +62,7 @@ Zero external dependencies. No icon libraries. No build step.
 - **Hash routing support** — Sailwind uses `wouter` with `useHashLocation`, so `?study=true` goes BEFORE the `#` fragment.
 - **Route keys without `#`** — STUDY_CONFIG route keys use path without `#` prefix; the script handles detection.
 - **No timing/CSV** — deferred until designers validate the need. May be re-added later.
-- **Header color `#1D6FD3`** — vibrant blue, distinct from Appian's `#2322f0`. All elements pass WCAG AA.
+- **Header color `#0C4283`** — deep navy, distinct from Appian's `#2322f0`. All elements pass WCAG AA.
 
 ## Accessibility
 
@@ -70,8 +70,8 @@ All color combinations have been verified:
 
 | Element | Foreground | Background | Ratio | Rating |
 |---------|-----------|------------|-------|--------|
-| Header title | white | `#1D6FD3` | 4.9:1 | AA |
-| Task counter | white@95% | `#1D6FD3` | 4.6:1 | AA |
+| Header title | white | `#0C4283` | 9.9:1 | AAA |
+| Task counter | white@80% | `#0C4283` | 6.9:1 | AA |
 | Minimize icon | white | button bg | 4.6:1 | AA |
 | Done button | white | `#15803D` | 4.8:1 | AA |
 | Next Task button | white | `#4B5563` | 7.2:1 | AAA |
