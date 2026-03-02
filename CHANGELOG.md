@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.8 — 2026-03-02
+
+- Next Task button changed to `#3F8EEE` with black text (6.4:1 contrast)
+
 ## v3.7 — 2026-03-02
 
 - Body text color changed from `#374151` to `#000` (black) for maximum readability
