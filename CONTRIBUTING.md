@@ -74,5 +74,5 @@ All color combinations have been verified:
 | Task counter | white@80% | `#115EBB` | 4.6:1 | AA |
 | Minimize icon | white | button bg | 4.6:1 | AA |
 | Done button | white | `#15803D` | 4.8:1 | AA |
-| Next Task button | black | `#3F8EEE` | 6.4:1 | AA |
+| Next Task button | white | `#4B5563` | 7.2:1 | AAA |
 | Body text | `#000` | white | 21:1 | AAA |

@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.8).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.9).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v3.8
+ * Appian Usability Study Overlay v3.9
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -493,7 +493,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     if (currentTask < tasks.length - 1) {
       document.getElementById('study-task-text').innerHTML = 'Great! When the facilitator prompts you, select Next Task.';
       var btns = document.getElementById('study-buttons');
-      btns.innerHTML = '<button id="study-next" style="padding:10px 24px;background:#3F8EEE;color:#000;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Next Task</button>';
+      btns.innerHTML = '<button id="study-next" style="padding:10px 24px;background:#4B5563;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Next Task</button>';
       document.getElementById('study-next').addEventListener('click', function () {
         currentTask++;
         showTask();

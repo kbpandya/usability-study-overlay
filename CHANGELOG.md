@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.9 — 2026-03-02
+
+- Next Task button reverted to slate `#4B5563` with white text (7.2:1 contrast)
+
 ## v3.8 — 2026-03-02
 
 - Next Task button changed to `#3F8EEE` with black text (6.4:1 contrast)
