@@ -293,7 +293,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
         '<span id="study-task-num" style="font-size:12px;opacity:0.80;margin-top:4px;display:block;"></span>' +
       '</div>' +
       '<div id="study-body" style="padding:20px;">' +
-        '<p id="study-task-text" style="font-size:16px;color:#374151;margin:0 0 20px 0;line-height:1.6;"></p>' +
+        '<p id="study-task-text" style="font-size:14px;color:#374151;margin:0 0 20px 0;line-height:1.6;"></p>' +
         '<div id="study-buttons" style="display:flex;gap:8px;justify-content:flex-end;"></div>' +
       '</div>';
 

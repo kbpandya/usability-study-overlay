@@ -2,7 +2,7 @@
 
 ## v3.3 — 2026-03-02
 
-- Body text size increased from 13px to 16px (1rem) for better readability
+- Body text size changed from 13px to 14px (0.875rem) — readable but subordinate to 15px header title
 
 ## v3.2 — 2026-03-02
 
