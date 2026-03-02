@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.9).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v4.0).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v3.9
+ * Appian Usability Study Overlay v4.0
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -257,6 +257,8 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
   // --- SVG icons (inline, zero dependencies) ---
   var ICON_MINIMIZE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>';
   var ICON_TASKS = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/><polyline points="17 16 19 18 23 14" stroke-width="2"/></svg>';
+
+  var ICON_BACK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
 
   // --- Build overlay DOM ---
   function buildOverlay(cfg) {
@@ -483,7 +485,14 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     document.getElementById('study-task-text').innerHTML = tasks[currentTask];
 
     var btns = document.getElementById('study-buttons');
-    btns.innerHTML = '<button id="study-done" style="padding:10px 24px;background:#15803D;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Done</button>';
+    var backBtn = currentTask > 0 ? '<button id="study-back" aria-label="Previous task" style="padding:8px 10px;background:transparent;border:1px solid #D1D5DB;border-radius:6px;cursor:pointer;color:#4B5563;line-height:1;display:flex;align-items:center;">' + ICON_BACK + '</button>' : '';
+    btns.innerHTML = backBtn + '<button id="study-done" style="padding:10px 24px;background:#15803D;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Done</button>';
+    if (currentTask > 0) {
+      document.getElementById('study-back').addEventListener('click', function () {
+        currentTask--;
+        showTask();
+      });
+    }
     document.getElementById('study-done').addEventListener('click', onDone);
   }
 
@@ -493,7 +502,12 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     if (currentTask < tasks.length - 1) {
       document.getElementById('study-task-text').innerHTML = 'Great! When the facilitator prompts you, select Next Task.';
       var btns = document.getElementById('study-buttons');
-      btns.innerHTML = '<button id="study-next" style="padding:10px 24px;background:#4B5563;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Next Task</button>';
+      var backBtn = '<button id="study-back" aria-label="Previous task" style="padding:8px 10px;background:transparent;border:1px solid #D1D5DB;border-radius:6px;cursor:pointer;color:#4B5563;line-height:1;display:flex;align-items:center;">' + ICON_BACK + '</button>';
+      btns.innerHTML = backBtn + '<button id="study-next" style="padding:10px 24px;background:#4B5563;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Next Task</button>';
+      document.getElementById('study-back').addEventListener('click', function () {
+        currentTask--;
+        showTask();
+      });
       document.getElementById('study-next').addEventListener('click', function () {
         currentTask++;
         showTask();

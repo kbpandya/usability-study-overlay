@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0 — 2026-03-02
+
+- Added back button (left arrow) to navigate to previous tasks
+- Appears on task 2+ as a subtle outlined icon button next to Done
+- Also available in the "Next Task" intermediate state
+- First task has no back button (nothing to go back to)
+
 ## v3.9 — 2026-03-02
 
 - Next Task button reverted to slate `#4B5563` with white text (7.2:1 contrast)
