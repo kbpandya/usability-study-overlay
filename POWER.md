@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v4.1).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v4.2).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v4.1
+ * Appian Usability Study Overlay v4.2
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -485,7 +485,8 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     document.getElementById('study-task-text').innerHTML = tasks[currentTask];
 
     var btns = document.getElementById('study-buttons');
-    var backBtn = currentTask > 0 ? '<button id="study-back" aria-label="Previous task" style="padding:8px 14px;background:transparent;border:1px solid #D1D5DB;border-radius:6px;cursor:pointer;color:#4B5563;line-height:1;display:flex;align-items:center;gap:4px;font-size:13px;font-weight:500;font-family:inherit;">' + ICON_BACK + 'Back</button>' : '';
+    var backBtn = currentTask > 0 ? '<button id="study-back" aria-label="Previous task" style="padding:10px 24px;background:transparent;border:1px solid #D1D5DB;border-radius:6px;cursor:pointer;color:#4B5563;font-size:13px;font-weight:500;font-family:inherit;">Back</button>' : '';
+    btns.style.justifyContent = currentTask > 0 ? 'space-between' : 'flex-end';
     btns.innerHTML = backBtn + '<button id="study-done" style="padding:10px 24px;background:#15803D;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Done</button>';
     if (currentTask > 0) {
       document.getElementById('study-back').addEventListener('click', function () {
@@ -502,14 +503,13 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
     if (currentTask < tasks.length - 1) {
       document.getElementById('study-task-text').innerHTML = 'Great! When the facilitator prompts you, select Next Task.';
       var btns = document.getElementById('study-buttons');
-      var backBtn = currentTask > 0 ? '<button id="study-back" aria-label="Previous task" style="padding:8px 14px;background:transparent;border:1px solid #D1D5DB;border-radius:6px;cursor:pointer;color:#4B5563;line-height:1;display:flex;align-items:center;gap:4px;font-size:13px;font-weight:500;font-family:inherit;">' + ICON_BACK + 'Back</button>' : '';
-      btns.innerHTML = backBtn + '<button id="study-next" style="padding:10px 24px;background:#4B5563;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Next Task</button>';
-      if (currentTask > 0) {
-        document.getElementById('study-back').addEventListener('click', function () {
-          currentTask--;
-          showTask();
-        });
-      }
+      btns.style.justifyContent = 'space-between';
+      btns.innerHTML = '<button id="study-back" aria-label="Previous task" style="padding:10px 24px;background:transparent;border:1px solid #D1D5DB;border-radius:6px;cursor:pointer;color:#4B5563;font-size:13px;font-weight:500;font-family:inherit;">Back</button>' +
+        '<button id="study-next" style="padding:10px 24px;background:#4B5563;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Next Task</button>';
+      document.getElementById('study-back').addEventListener('click', function () {
+        currentTask--;
+        showTask();
+      });
       document.getElementById('study-next').addEventListener('click', function () {
         currentTask++;
         showTask();

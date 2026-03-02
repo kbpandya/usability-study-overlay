@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.2 — 2026-03-02
+
+- Back button: removed arrow icon, text-only "Back"
+- Back button left-aligned, Done/Next right-aligned (space-between layout)
+- Back button always shows in intermediate "Next Task" state (including after task 1)
+
 ## v4.1 — 2026-03-02
 
 - Fixed back button going to negative task indices on task 1's intermediate state
