@@ -45,7 +45,7 @@ When the designer asks to update or upgrade the overlay, OR when you detect an o
 
 ### Version Check
 
-If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.6).
+If `public/scripts/study-overlay.js` already exists, read the first few lines and look for the version comment (e.g., `Appian Usability Study Overlay v2.1`). Compare it to the version in the "Complete Overlay Script" section of this document (currently v3.7).
 
 - If the existing version is older, tell the designer: "Your project has study-overlay v{old}. The latest version is v{new}. Want me to update it?"
 - If the designer confirms (or explicitly asked to update), overwrite `public/scripts/study-overlay.js` with the EXACT contents from the "Complete Overlay Script" section below.
@@ -175,7 +175,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
 
 ```javascript
 /**
- * Appian Usability Study Overlay v3.6
+ * Appian Usability Study Overlay v3.7
  * 
  * A self-contained, drop-in script for running moderated usability studies
  * on Kiro-assisted prototypes. Zero dependencies — no icon libraries needed.
@@ -293,7 +293,7 @@ Write the following EXACTLY to `public/scripts/study-overlay.js` when setting up
         '<span id="study-task-num" style="font-size:12px;opacity:0.80;margin-top:4px;display:block;"></span>' +
       '</div>' +
       '<div id="study-body" style="padding:20px;">' +
-        '<p id="study-task-text" style="font-size:14px;color:#374151;margin:0 0 20px 0;line-height:1.6;"></p>' +
+        '<p id="study-task-text" style="font-size:14px;color:#000;margin:0 0 20px 0;line-height:1.6;"></p>' +
         '<div id="study-buttons" style="display:flex;gap:8px;justify-content:flex-end;"></div>' +
       '</div>';
 

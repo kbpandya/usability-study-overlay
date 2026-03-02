@@ -75,4 +75,4 @@ All color combinations have been verified:
 | Minimize icon | white | button bg | 4.6:1 | AA |
 | Done button | white | `#15803D` | 4.8:1 | AA |
 | Next Task button | white | `#4B5563` | 7.2:1 | AAA |
-| Body text | `#374151` | white | 10.3:1 | AAA |
+| Body text | `#000` | white | 21:1 | AAA |

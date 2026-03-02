@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.7 — 2026-03-02
+
+- Body text color changed from `#374151` to `#000` (black) for maximum readability
+
 ## v3.6 — 2026-03-02
 
 - Header color reverted to `#115EBB` — best balance of vibrancy, contrast, and visual hierarchy
