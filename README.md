@@ -8,6 +8,7 @@ A drop-in floating task panel for running moderated usability studies on any web
 
 - Injects a floating task panel on any prototype page
 - Task progression with Done / Next Task flow
+- Back button navigates through previous screens like browser history
 - Draggable and minimizable — both the panel and the minimized pill
 - Supports path routing (`/page`) and hash routing (`/#/page`)
 - Multi-page configs for sites with multiple prototypes

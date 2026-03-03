@@ -6,10 +6,12 @@ This document is for maintainers working on the power itself. If you're a design
 
 ```
 Usability Study Overlay/
-├── POWER.md           # Kiro reads this — contains instructions + embedded script
-├── README.md          # User-facing docs (shows on GitHub)
-├── CHANGELOG.md       # Version history
-└── CONTRIBUTING.md    # Maintainer docs (this file)
+├── POWER.md                        # Kiro reads this — contains instructions + embedded script
+├── README.md                       # User-facing docs (shows on GitHub)
+├── CHANGELOG.md                    # Version history
+├── CONTRIBUTING.md                 # Maintainer docs (this file)
+├── Kiro Power Panel for setup.png  # Screenshot for README Quick Start
+└── Overlay example.png             # Screenshot for README hero image
 ```
 
 - `POWER.md` is the only file Kiro installs. It contains both the integration instructions and the full overlay script as a code block.
@@ -49,8 +51,9 @@ The overlay is a single self-executing IIFE (`study-overlay.js`) that:
 2. Reads `window.STUDY_CONFIG` to find tasks for the current route
 3. Auto-detects hash routing (`/#/page`) vs path routing (`/page`)
 4. Injects a fixed-position panel with inline styles (no CSS framework needed)
-5. Manages task progression, minimize/maximize, and drag (both panel and minimized pill)
-6. For multi-page configs, watches for route changes (popstate, hashchange, pushState/replaceState patches)
+5. Manages task progression (Done → intermediary → Next Task), back navigation, minimize/maximize, and drag (both panel and minimized pill)
+6. Back button navigates like browser history: task screen → previous intermediary, intermediary → current task
+7. For multi-page configs, watches for route changes (popstate, hashchange, pushState/replaceState patches)
 
 Zero external dependencies. No icon libraries. No build step.
 
@@ -75,4 +78,5 @@ All color combinations have been verified:
 | Minimize icon | white | button bg | 4.6:1 | AA |
 | Done button | white | `#15803D` | 4.8:1 | AA |
 | Next Task button | white | `#4B5563` | 7.2:1 | AAA |
+| Back button | `#4B5563` | white | 7.2:1 | AAA |
 | Body text | `#000` | white | 21:1 | AAA |

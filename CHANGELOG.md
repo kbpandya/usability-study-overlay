@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.6 — 2026-03-03
+
+- Removed unused `ICON_BACK` SVG constant (back button has been text-only since v4.2)
+- Updated CONTRIBUTING.md: file structure includes image files, architecture describes back navigation, accessibility table includes Back button
+- Updated README: added back navigation to feature list
+
 ## v4.5 — 2026-03-02
 
 - Task counter now updates correctly on intermediary screens when navigating Back (shows the task you completed, not the one you came from)
